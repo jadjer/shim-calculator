@@ -35,12 +35,17 @@ python generate_data.py -m honda -c 2 -v 4 -i 0.16 -id 0.03 -e 0.33 -ed 0.03 -n 
 
 > -o Output file name
 
+Output message
+```text
+Engine data saved as data/honda-varadero-20240818-221421.json. Complete it manually or use complete_data.py script.
+```
+
 
 ## Second step
 Open saved file. Complete it manually or use complete_data.py script.
 
 ```commandline
-python complete_data.py -f data/honda-2cylinders-4valves-20240818-212419.json -v -s
+python complete_data.py -f data/honda-varadero-20240818-221421.json -v -s
 ```
 > -f Source file
 
@@ -53,5 +58,5 @@ python complete_data.py -f data/honda-2cylinders-4valves-20240818-212419.json -v
 Calculate shims
 
 ```commandline
-python shim_calculator.py -f data/honda-2cylinders-4valves-20240818-212419.json
+python shim_calculator.py -f data/honda-varadero-20240818-221421.json
 ```
