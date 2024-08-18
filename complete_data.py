@@ -13,6 +13,7 @@
 #  limitations under the License.
 
 from loguru import logger
+from argparse import ArgumentParser
 
 from core.file_manager import save_source, get_source
 from core.models import Engine
@@ -20,12 +21,10 @@ from core.functions.complete_data import complete_valve_data, complete_shim_data
 
 
 def main():
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Source file complete")
+    parser = ArgumentParser(description="Source file complete")
     parser.add_argument("-f", "--source_file", type=str, required=True, help="Source file")
-    parser.add_argument("-v", "--valve", type=str, required=False, help="Complete for valves")
-    parser.add_argument("-s", "--shim", type=str, required=False, help="Complete for shims")
+    parser.add_argument("-v", "--valve", action='store_true', help="Complete for valves")
+    parser.add_argument("-s", "--shim", action='store_true', help="Complete for shims")
 
     args = parser.parse_args()
 

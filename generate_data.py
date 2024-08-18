@@ -13,6 +13,7 @@
 #  limitations under the License.
 
 from loguru import logger
+from argparse import ArgumentParser
 
 from core.file_manager import get_file_name, save_source
 from core.models import Engine
@@ -20,9 +21,7 @@ from core.functions.create_data import create_data
 
 
 def main():
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Source file generator")
+    parser = ArgumentParser(description="Source file generator")
     parser.add_argument("-m", "--manufacturer", type=str, required=True, help="Manufacturer name")
     parser.add_argument("-n", "--name", type=str, required=False, help="Vehicle name")
     parser.add_argument("-c", "--cylinders", type=int, required=True, help="Number of cylinders")

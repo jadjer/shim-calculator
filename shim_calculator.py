@@ -12,9 +12,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-import argparse
-
 from loguru import logger
+from argparse import ArgumentParser
 
 from core.file_manager import get_source
 from core.models import Engine
@@ -22,7 +21,7 @@ from core.functions.calculate_shims import calculate_shims
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Shim generator")
+    parser = ArgumentParser(description="Shim generator")
     parser.add_argument("-f", "--source_file", type=str, required=True, help="Source file")
 
     args = parser.parse_args()
